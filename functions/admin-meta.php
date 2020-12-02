@@ -33,22 +33,6 @@ function ceo_chapters_add_edit_menu_order($term_id) {
 	}		
 }
 
-/*
-function ceo_chapters_find_menu_orderby($args) {
-	if ('menu_order' === $args['orderby']) {
-		add_filter('get_terms_orderby', 'ceo_chapters_edit_menu_orderby');
-	}
-	return $args;
-}
-
-
-function ceo_chapters_edit_menu_orderby() {
-	//This is a one-off, so that we don't disrupt queries that may not use menu_order.
-	remove_filter('get_terms_orderby', 'ceo_chapters_edit_menu_orderby');
-	return "menu_order";	
-}
-*/
-
 function ceo_chapters_quick_edit_menu_order ($column_name, $screen, $name = '') {
 	if ( did_action( 'quick_edit_custom_box' ) !== 1 ) return;
 	if (($column_name != 'menu_order') && ($name != 'chapters') && ($screen != 'edit-tags') && empty($name)) return;
@@ -394,20 +378,6 @@ function ceo_edit_buycomic_in_post($post) {
 	<?php 
 }
 
-function ceo_flash_upload_box($post) { ?>
-<label for="upload_flash">
-    <?php _e('Enter a URL or upload a flash comic.','comiceasel'); ?><br />
-    <input id="flash_file" class="flash_file" type="text" name="flash_file" value="<?php echo get_post_meta( $post->ID, 'flash_file', true ); ?>" />
-    <input name="upload_flash_button" class="upload_flash_button" type="button" value="<?php _e('Upload Flash','comiceasel'); ?>" /><br />
-</label>
-<br />
-<?php _e('Set the dimensions of the flash .swf comic.','comiceasel'); ?><br />
-<label for="flash_height"><?php _e('Height:','comiceasel'); ?> <input id="flash_height" name="flash_height" type="text" value="<?php echo get_post_meta( $post->ID, 'flash_height', true ); ?>" /></label>
-<label for="flash_width"><?php _e('Width:','comiceasel'); ?> <input id="flash_width" name="flash_width" type="text" value="<?php echo get_post_meta( $post->ID, 'flash_width', true ); ?>" /></label><br />
-<br />
-<em><?php _e('You still need to have a featured image set, it will be used as a thumbnail.','comiceasel'); ?></em>
-<?php }
-
 function ceo_edit_taxonomy_archive_overwrite() {
 	global $post;
 	wp_nonce_field( basename( __FILE__ ), 'comic_nonce' );
@@ -453,8 +423,6 @@ function ceo_add_comic_in_post() {
 		add_meta_box('ceo_html_above_comic', __('HTML (Above) Comic', 'comiceasel'), 'ceo_edit_html_above_comic', 'comic', 'normal', 'high');
 		add_meta_box('ceo_html_below_comic', __('HTML (Below) Comic', 'comiceasel'), 'ceo_edit_html_below_comic', 'comic', 'normal', 'high');
 	}
-	if (!defined('CEO_FEATURE_FLASH_UPLOAD'))
-		add_meta_box('ceo_flash_upload', __('Add Flash Comic', 'comiceasel'), 'ceo_flash_upload_box', 'comic', 'normal', 'high');
 	if (!defined('CEO_FEATURE_MEDIA_EMBED')) 
 		add_meta_box('ceo_media_embed_file', __('Media Url as Comic', 'comiceasel'), 'ceo_media_embed_box', 'comic', 'normal', 'low');
 	if (function_exists('comicpress_themeinfo'))
