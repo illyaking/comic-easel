@@ -1,8 +1,6 @@
 <div class="wrap">
 	<div id="ceoadmin-headericon" style="background: url('<?php echo ceo_pluginfo('plugin_url') ?>images/easel_small.png') no-repeat;"></div>
-<p class="alignleft">
-	<h2><?php _e('Comic Easel - Config','comiceasel'); ?></h2>
-</p>
+    <div class="alignleft"><h2><?php _e('Comic Easel - Config','comiceasel'); ?></h2></div>
 <div class="clear"></div>
 <?php
 $tab = '';
@@ -156,7 +154,7 @@ if ( isset($_POST['_wpnonce']) && wp_verify_nonce($_POST['_wpnonce'], 'update-op
 		}
 		
 		if ($tab) { ?>
-			<div id="message" class="updated"><p><strong><?php _e('Comic Easel Settings SAVED!','comiceasel'); ?></strong></p></div>
+			<div><p><strong><?php _e('Comic Easel Settings SAVED!','comiceasel'); ?></strong></p></div>
 			<script>function hidemessage() { document.getElementById('message').style.display = 'none'; }</script>
 		<?php }
 	} 
@@ -186,7 +184,7 @@ if ( isset($_POST['_wpnonce']) && wp_verify_nonce($_POST['_wpnonce'], 'update-op
 		  <?php	foreach (glob(ceo_pluginfo('plugin_path') . 'options/*.php') as $file) { include($file); } ?>
 		</div>
 	</div>
-	<script type="text/javascript">
+	<script>
 		(function($) {
 			var showPage = function(which) {
 				$('#comiceasel-options-pages > div').each(function(i) {
@@ -213,7 +211,7 @@ if ( isset($_POST['_wpnonce']) && wp_verify_nonce($_POST['_wpnonce'], 'update-op
 
 	<div class="ceoadmin-footer">
 		<br />
-		<a href="http://comiceasel.com"><?php _e('Comic Easel','comiceasel'); ?></a> <?php _e('created, developed and maintained by','comiceasel'); ?> <a href="http://frumph.net/">Philip M. Hofer</a> <small>(<a href="http://frumph.net/">Frumph</a>)</small><br />
+		<a href="http://frumph.net/"><?php _e('Comic Easel','comiceasel'); ?></a> <?php _e('created, developed and maintained by','comiceasel'); ?> <a href="http://frumph.net/">Philip M. Hofer</a> <small>(<a href="http://frumph.net/">Frumph</a>)</small><br />
 		<?php _e('If you like the Comic Easel plugin, please donate.  It will help in developing new features and versions.','comiceasel'); ?><br />
 		<table style="margin:0 auto;">
 			<tr>

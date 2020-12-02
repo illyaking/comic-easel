@@ -15,7 +15,7 @@ Comic Easel allows you to post webcomics to your theme.
 
 == Description ==
 
-Comic Easel Website: [Comic Easel](http://comiceasel.com/ "Comic Easel - Plugin your WebComic")
+Comic Easel Website: [Comic Easel](http://frumph.net/ "Comic Easel - Plugin your WebComic")
 
 Comic Easel allows you to incorporate a WebComic using the WordPress Media Library functionality with Navigation into almost any WordPress theme. With just a few modifications of adding *injection* action locations into a theme, you can have the theme of your choice display a comic.
 
@@ -129,6 +129,9 @@ The comic navigation widget is only seen if you have the comic sidebar's enabled
 
 
 == Changelog ==
+
+== 1.15.1 ==
+
 = 1.15 =
 * keynav update - to preserve browser forward/back functions / jn-squire
 * added Text Domain: to readme / Frumph

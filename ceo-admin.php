@@ -106,22 +106,6 @@ function ceo_import() {
 	require_once('ceo-import.php');
 }
 
-function ceo_manager_adconfig() {
-	require_once('ceo-adconfig.php');
-}
-
-/**
- * This set of functions is for displaying the dashboard feed widget.
- *
- */
-function ceo_dashboard_feed_widget() {
-	wp_widget_rss_output('http://comiceasel.com/?feed=rss2', array('items' => 3, 'show_summary' => true));
-} 
-
-function ceo_add_dashboard_widgets() {
-	wp_add_dashboard_widget('ceo_dashboard_widget', 'Comic Easel News', 'ceo_dashboard_feed_widget');	
-}
-
 function ceo_enqueue_admin_cpt_style( $cpt, $handle, $src = false, $deps = array(), $ver = false, $media = 'all' ) {
  
 	/* Check the admin page we are on. */
