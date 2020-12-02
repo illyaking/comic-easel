@@ -130,7 +130,16 @@ The comic navigation widget is only seen if you have the comic sidebar's enabled
 
 == Changelog ==
 
-== 1.15.1 ==
+= 1.15.1 =
+* 12-02-2020
+* Elimiated Blind Ferret Coding
+* Eliminated Flash uploads
+* Eiminated unused coding that were gray-out
+* Removed Comic Easel web address reference. Domain not active
+* Check for PHP bugs 
+* Need to work out line 70 on admin-meta.php. Deprecated.
+* Added https to http links
+* Navigation.php fixed <strong></strong> error
 
 = 1.15 =
 * keynav update - to preserve browser forward/back functions / jn-squire
