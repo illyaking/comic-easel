@@ -1,4 +1,4 @@
-=== Comic Easel ===
+=== Comic Easel v.2 ===
 Author: Frumph
 Contributors: Frumph, Illya King
 Tags: comiceasel, easel, webcomic, comic, webcomic
