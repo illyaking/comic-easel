@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Comic Easel
-Plugin URI: http://comiceasel.com
-Description: Comic Easel allows you to incorporate a WebComic using the WordPress Media Library functionality with Navigation into almost all WordPress themes. With just a few modifications of adding injection do_action locations into a theme, you can have the theme of your choice display and manage a webcomic.
-Version: 1.15
+Plugin Name: Comic Easel v.2
+Plugin URI: https://thecomixscene.com
+Description: A fork of Comic Easel, by Philip M. Hofer (Frumph). Comic Easel V.2 allows you to incorporate a WebComic using the WordPress Media Library functionality with Navigation into almost all WordPress themes. With just a few modifications of adding injection do_action locations into a theme, you can have the theme of your choice display and manage a webcomic.
+Version: 1.15.1
 Author: Philip M. Hofer (Frumph)
 Author URI: http://frumph.net/
 
@@ -365,7 +365,7 @@ function ceo_load_options($reset = false) {
 		delete_option('comiceasel-config');
 		foreach (array(
 			'db_version' => '1.2',
-			'add_dashboard_frumph_feed_widget' => true,
+			'add_dashboard_frumph_feed_widget' => false,
 			'disable_comic_on_home_page' => false,
 			'disable_comic_blog_on_home_page' => false,
 			'click_comic_next' => true,
@@ -554,7 +554,6 @@ foreach (glob(ceo_pluginfo('plugin_path')  . 'widgets/*.php') as $widgefile) {
 add_action( 'widgets_init', 'ceo_register_widgets');
 
 function ceo_register_widgets() { 
-	register_widget('ceo_bf_adwidget');
 	register_widget('ceo_comic_archive_dropdown_widget');
 	register_widget('ceo_casthover_reference_widget');
 	register_widget('ceo_comic_blog_post_widget');
@@ -602,12 +601,5 @@ function ceo_run_scripts() {
 	}
 	if (!ceo_pluginfo('disable_keynav')) {
 		wp_enqueue_script('ceo_keynav', ceo_pluginfo('plugin_url').'js/keynav.js', null, null, true);
-	}
-}
-
-function ceo_bf_add_script_to_head() {
-	$ceo_options = get_option('comiceasel-config');
-	if (isset($ceo_options['bf_adinfo']) && !empty($ceo_options['bf_adinfo'])) {
-		echo '<script type="text/javascript" src="https://thor.blindferret.media/'.ceo_pluginfo('bf_adinfo').'/jita.js?dfp=1" async defer></script>'."\r\n";
 	}
 }

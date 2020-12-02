@@ -186,6 +186,44 @@ if ( isset($_POST['_wpnonce']) && wp_verify_nonce($_POST['_wpnonce'], 'comicease
 		<?php echo '<center><strong>'.__('WARNING: When uploading your comics to the import directory, make sure there is only 1 comic per day, multiple comics per day will have issues.','comiceasel').'</strong></center>';  ?>
 		</td>
 	</tr>
+<?php 
+/*
+	<tr>
+		<td valign="top" align="right">
+			<input name="import-type" class="import-type" type="radio" value="numbered" disabled="disabled" />
+		</td>
+		<td align="left">
+			<?php _e('by Numbered filename','comiceasel'); ?>
+		</td>
+		<td align="left">
+			<?php _e('Filename Mask','comiceasel'); ?><br />
+			{NUM} <?php _e('gets replaced with the comic number, starting at 1 - use Backdate Files option', 'comiceasel'); ?><br />
+			<input name="import-filename-mask" class="import-filename-mask" value="comic{NUM}.*" disabled="disabled" />
+		</td>
+		<td align="left">
+			<input name="import-backdate" class="import-backdate" type="checkbox" value="1" checked disabled="disabled" /> <?php _e('Backdate Files', 'comiceasel'); ?><br />
+			<input name="import-backdate-how" class="import-backdate-how-everyday" type="radio" value="everyday" disabled="disabled" /> Everyday<br />
+			<input name="import-backdate-how" class="import-backdate-how-weekdays" type="radio" value="weekdays" disabled="disabled" /> Weekdays<br />			
+			<input name="import-backdate-how" class="import-backdate-how-mwf" type="radio" value="mwf" disabled="disabled" /> MWF
+		</td>
+	</tr>
+*/
+?>
+<?php 
+/*
+	<tr>
+		<td align="right">
+			<input name="import-create-post" class="import-create-post" type="checkbox" value="1" <?php checked($import_create_post, true); ?> />
+		</td>
+		<td align="left">
+			<?php _e('Import even if comic post already exists for that date.','comiceasel'); ?>
+		</td>
+		<td align="left" colspan="11">
+			<?php _e('Having this NOT checked (default) will make it so that if there is already a comic for that date it will not add another one.', 'comiceasel'); ?>
+		</td>
+	</tr>
+*/
+?>
 	<tr>
 		<td align="right">
 		</td>

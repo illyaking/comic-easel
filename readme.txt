@@ -1,6 +1,6 @@
 === Comic Easel ===
 Author: Frumph
-Contributors: Frumph
+Contributors: Frumph, Illya King
 Tags: comiceasel, easel, webcomic, comic, webcomic
 Requires at least: 4.8.2
 Tested up to: 5.0
@@ -14,8 +14,6 @@ Comic Easel allows you to post webcomics to your theme.
 
 
 == Description ==
-
-Comic Easel Website: [Comic Easel](http://frumph.net/ "Comic Easel - Plugin your WebComic")
 
 Comic Easel allows you to incorporate a WebComic using the WordPress Media Library functionality with Navigation into almost any WordPress theme. With just a few modifications of adding *injection* action locations into a theme, you can have the theme of your choice display a comic.
 
@@ -131,15 +129,26 @@ The comic navigation widget is only seen if you have the comic sidebar's enabled
 == Changelog ==
 
 = 1.15.1 =
-* 12-02-2020
-* Elimiated Blind Ferret Coding
-* Eliminated Flash uploads
-* Eiminated unused coding that were gray-out
-* Removed Comic Easel web address reference. Domain not active
-* Check for PHP bugs 
-* Need to work out line 70 on admin-meta.php. Deprecated.
-* Added https to http links
-* Navigation.php fixed <strong></strong> error
+* 2020-12-02
+* Added ComiX Scene info to replace Comic Easel info in description. 
+* Remove Blind Ferret Widget call in comiceasel.php.
+* Removed grayed-out code from functions/admin-meta.php.
+* Removed Flash call in functions/admin-meta.php. Flash will be discontinued. 
+* functions/admin-meta.php Deprecated: Required parameter $custom_column follows optional parameter $empty in file on line 70.
+* functions/admin-meta.php Deprecated: Required parameter $term_id follows optional parameter $empty in file on line 70.
+* Removed Flash call in functions/displaycomic.php. Flash will be discontinued.
+* Removed grayed-out code from functions/redirects.php
+* Removed Monetize reference from ceo-admin.php
+* Remove Comic Easel Dashboard feed widget. http://comiceasel.com is not active. 
+* Deleted Blind Ferret Icon. Blind Ferret not active. 
+* Replaced Comic Easel link to Frumph.net link. Comic Easel website not active.
+* Deleted flash.js. Flash will be discontinued.
+* Deleted ceo-adconfig.php. Blind Ferret not active.
+* Deleted monetize folder. Blind Ferret not active.
+* Deleted Comic Easel reference from options/main.php. Comic Easel website not active.
+* Fixed social network links in options/main.php
+* Fixed <strong></strong> php error in options/navigation.php.
+* Adjusted http to https in instructions on options/buycomic.php.
 
 = 1.15 =
 * keynav update - to preserve browser forward/back functions / jn-squire

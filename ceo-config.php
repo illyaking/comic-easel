@@ -1,6 +1,8 @@
 <div class="wrap">
 	<div id="ceoadmin-headericon" style="background: url('<?php echo ceo_pluginfo('plugin_url') ?>images/easel_small.png') no-repeat;"></div>
-    <div class="alignleft"><h2><?php _e('Comic Easel - Config','comiceasel'); ?></h2></div>
+<p class="alignleft">
+	<h2><?php _e('Comic Easel - Config','comiceasel'); ?></h2>
+</p>
 <div class="clear"></div>
 <?php
 $tab = '';
@@ -154,7 +156,7 @@ if ( isset($_POST['_wpnonce']) && wp_verify_nonce($_POST['_wpnonce'], 'update-op
 		}
 		
 		if ($tab) { ?>
-			<div><p><strong><?php _e('Comic Easel Settings SAVED!','comiceasel'); ?></strong></p></div>
+			<div id="message" class="updated"><p><strong><?php _e('Comic Easel Settings SAVED!','comiceasel'); ?></strong></p></div>
 			<script>function hidemessage() { document.getElementById('message').style.display = 'none'; }</script>
 		<?php }
 	} 
@@ -184,7 +186,7 @@ if ( isset($_POST['_wpnonce']) && wp_verify_nonce($_POST['_wpnonce'], 'update-op
 		  <?php	foreach (glob(ceo_pluginfo('plugin_path') . 'options/*.php') as $file) { include($file); } ?>
 		</div>
 	</div>
-	<script>
+	<script type="text/javascript">
 		(function($) {
 			var showPage = function(which) {
 				$('#comiceasel-options-pages > div').each(function(i) {
