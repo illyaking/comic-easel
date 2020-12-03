@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: Comic Easel v.2
-Plugin URI: https://thecomixscene.com
+Plugin Name: Comic Easel V.2
+Plugin URI: https://github.com/illyaking/comic-easel-v2
 Description: A fork of Comic Easel, by Philip M. Hofer (Frumph). Comic Easel V.2 allows you to incorporate a WebComic using the WordPress Media Library functionality with Navigation into almost all WordPress themes. With just a few modifications of adding injection do_action locations into a theme, you can have the theme of your choice display and manage a webcomic.
 Version: 1.15.1
 Author: Philip M. Hofer (Frumph)
