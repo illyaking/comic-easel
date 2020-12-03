@@ -591,7 +591,6 @@ function ceo_run_css() {
 
 function ceo_run_scripts() {
 	global $post;
-	add_action('wp_head', 'ceo_bf_add_script_to_head');
 	if (!empty($post)) {
 		$comic_content_warning = get_post_meta( $post->ID, 'comic-content-warning', true );
 		if ($comic_content_warning) {
