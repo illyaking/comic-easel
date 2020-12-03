@@ -1,4 +1,4 @@
-=== Comic Easel v.2 ===
+=== Comic Easel ===
 Author: Frumph
 Contributors: Frumph, Illya King
 Tags: comiceasel, easel, webcomic, comic, webcomic
@@ -11,7 +11,6 @@ License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Comic Easel allows you to post webcomics to your theme.
-
 
 == Description ==
 
@@ -149,7 +148,6 @@ The comic navigation widget is only seen if you have the comic sidebar's enabled
 * Fixed social network links in options/main.php
 * Fixed <strong></strong> php error in options/navigation.php.
 * Adjusted http to https in instructions on options/buycomic.php.
-* Deleted bf_adwidget.php from widgets/. Blind Ferret not active.
 
 = 1.15 =
 * keynav update - to preserve browser forward/back functions / jn-squire

@@ -48,8 +48,8 @@
 						<?php _e('The FULL URL address to which you associated the buy comic shortcode.','comiceasel'); ?><br />
 						<em>
 							<?php _e('Examples:','comiceasel'); ?>
-							"http://yourdomain.com/?p=233",
-							"http://yourdomain.com/shop/",
+							"https://yourdomain.com/?p=233",
+							"https://yourdomain.com/shop/",
 						</em>
 					</td>
 				</tr>
