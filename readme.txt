@@ -1,4 +1,4 @@
-=== Comic Easel ===
+=== Comic Easel V.2 ===
 Author: Frumph
 Contributors: Frumph, Illya King
 Tags: comiceasel, easel, webcomic, comic, webcomic
@@ -148,7 +148,7 @@ The comic navigation widget is only seen if you have the comic sidebar's enabled
 * Fixed social network links in options/main.php
 * Fixed <strong></strong> php error in options/navigation.php.
 * Adjusted http to https in instructions on options/buycomic.php.
-* Changed CEO-Icon image.
+* Replaced ceo-icon menu icon with WP Dashicon.
 
 = 1.15 =
 * keynav update - to preserve browser forward/back functions / jn-squire
