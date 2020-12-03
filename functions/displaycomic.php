@@ -123,6 +123,30 @@ function ceo_display_comic_gallery($size = 'full') {
 	return apply_filters('ceo_display_comic_gallery', $output);
 }
 
+function ceo_display_flash_comic($post, $flash_url) {
+	$height = get_post_meta( $post->ID, "flash_height", true );
+	$width = get_post_meta( $post->ID, "flash_width", true );
+	if (empty($height)) $height = '380';
+	if (empty($width)) $width = '520';
+	$output = '';
+	$output .= '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="'.$width.'" height="'.$height.'" id="flash_comic" align="middle">'."\r\n";
+	$output .= '	<param name="movie" value="'.$flash_url.'"/>'."\r\n";
+	$output .= '    <!--[if !IE]>-->'."\r\n";
+	$output .= '    <object type="application/x-shockwave-flash" data="'.$flash_url.'" width="'.$width.'" height="'.$height.'">'."\r\n";
+	$output .= '        <param name="movie" value="'.$flash_url.'"/>'."\r\n";
+	$output .= '    <!--<![endif]-->'."\r\n";
+	$output .= ceo_display_featured_image_comic('full');
+	$output .= '        <a href="http://www.adobe.com/go/getflash">'."\r\n";
+	$output .= '            <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player"/>'."\r\n";
+	$output .= '        </a>'."\r\n";
+	$output .= '    <!--[if !IE]>-->'."\r\n";
+	$output .= '    </object>'."\r\n";
+	$output .= '    <!--<![endif]-->'."\r\n";
+	$output .= '</object>';
+	add_action('wp_footer', 'ceo_init_comic_swf');
+	return apply_filters('ceo_display_flash_comic', $output);
+}
+
 function ceo_init_comic_swf() {
 	wp_enqueue_script('swfobject', '', array(), false, true);
 }
@@ -143,6 +167,26 @@ function ceo_display_comic($size = 'full') {
 	}
 	$output = '';
 	if (ceo_the_above_html()) $output .= html_entity_decode(ceo_the_above_html())."\r\n";
+
+	if ($flash_file = get_post_meta($post->ID, "flash_file", true)) {
+		$output .= ceo_display_flash_comic($post, $flash_file);
+	} elseif (($media_url = get_post_meta( $post->ID, 'media_url', true )) && !defined('CEO_FEATURE_MEDIA_EMBED')) {
+		$output .= '<center>';
+		global $content_width;
+		$old_content_width = $content_width;
+		$media_width = get_post_meta($post->ID, 'media_width', true);
+		if (!empty($media_width)) $content_width = $media_width;
+		$output .= wp_oembed_get( $media_url );
+		$content_width=$old_content_width;
+		$output .= '</center>';
+	} else {
+		$comic_galleries = get_post_meta( $post->ID, 'comic-gallery', true );
+		if ($comic_galleries) {
+			$output .= ceo_display_comic_gallery($size);
+		} else {
+			$output .= ceo_display_featured_image_comic($size);
+		}
+	}	
 	if (ceo_the_below_html()) $output .= html_entity_decode(ceo_the_below_html())."\r\n";
 	if ($output) { 
 		return apply_filters('ceo_comics_display_comic', $output);
@@ -150,7 +194,7 @@ function ceo_display_comic($size = 'full') {
 		return apply_filters('ceo_comics_display_comic', __('<!-- No HTML, Gallery or Featured Image Found. //-->', 'comiceasel'));
 }
 
-add_filter('ceo_comics_display_comic', 'ceo_filter_comic_output', 10, 1);
+add_filter('ceo_comics_display_comic', 'ceo_filter_comic_output',10,1);
 
 function ceo_filter_comic_output($output = '') {
 	global $post;
