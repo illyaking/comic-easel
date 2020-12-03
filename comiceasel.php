@@ -74,7 +74,7 @@ function ceo_initialize_post_types() {
 					'exclude_from_search' => false,
 					'map_meta_cap' => true,
 					'has_archive' => true,
-					'menu_icon' => ceo_pluginfo('plugin_url') . 'images/ceo-icon.png',
+					'menu_icon' => 'dashicons-art',
 					'supports' => array( 'title', 'editor', 'excerpt', 'author', 'comments', 'thumbnail', 'custom-fields', 'revisions', 'trackbacks', 'shortlinks', 'publicize' ),
 					/* publicize and shortlinks from jetpack plugin */
 					'description' => 'Post type for Comics'
