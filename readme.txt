@@ -114,8 +114,6 @@ Sidebars for Comic Easel are added automatically since 05/28/2012 They should ap
 
 == Frequently Asked Questions ==
 
-Comic Easel Website, Troubleshoot Page: [Comic Easel](http://comiceasel.com/faqs/troubleshoot/ "Comic Easel - Plugin your Website - Troubleshooting Comic Easel")
-
 = The permalinks are not working to go to the comic =
 
 Go to your settings -> permalinks and just click save, the wp_rewrite will refresh.  You need to go to the settings -> permalinks if you ever upgrade enable or disable the Comic Easel plugin.
@@ -128,8 +126,6 @@ The comic navigation widget is only seen if you have the comic sidebar's enabled
 == Changelog ==
 
 = 1.15.1 =
-* 2020-12-02
-* Added ComiX Scene info to replace Comic Easel info in description. 
 * Remove Blind Ferret Widget call in comiceasel.php.
 * Removed grayed-out code from functions/admin-meta.php.
 * Removed Flash call in functions/admin-meta.php. Flash will be discontinued. 
