@@ -4,9 +4,6 @@
 add_action('admin_menu', 'ceo_add_menu_pages');
 add_action('admin_enqueue_scripts', 'ceo_comic_editor_scripts', 10, 1 );
 
-if (ceo_pluginfo('add_dashboard_frumph_feed_widget'))
-	add_action('wp_dashboard_setup', 'ceo_add_dashboard_widgets' );
-
 function ceo_comic_editor_scripts( $hook ) {
 	global $pagenow, $post;
 	if (!empty($pagenow)) {
