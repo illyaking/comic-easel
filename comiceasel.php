@@ -365,7 +365,6 @@ function ceo_load_options($reset = false) {
 		delete_option('comiceasel-config');
 		foreach (array(
 			'db_version' => '1.2',
-			'add_dashboard_frumph_feed_widget' => false,
 			'disable_comic_on_home_page' => false,
 			'disable_comic_blog_on_home_page' => false,
 			'click_comic_next' => true,
