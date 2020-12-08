@@ -2,18 +2,16 @@ div.casthover-hovercard {
     display: block;
     position: absolute;
     z-index: 9999;
-    width: 520px;
     visibility: hidden;
     height: 190px;
     width: 600px;
 }
 
 div.casthover-hovercard div.cast-box, div.casthover-hovercard table.cast-wrapper {
-    background: #CCCCCC;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(238, 238, 238, 1.0)),to(rgba(170, 170, 170, 3.0)));
+    background: #ffffff;
     border-radius: 10px;
     padding: 4px;
-    border: 2px solid black;
+    border: 2px solid #000000;
     position: absolute;
     display: block;
     top: 10px;
@@ -21,9 +19,9 @@ div.casthover-hovercard div.cast-box, div.casthover-hovercard table.cast-wrapper
 }
 
 div.casthover-hovercard div.cast-box div.cast-info p.cast-description, div.casthover-hovercard table.cast-wrapper td.cast-info p.cast-description {
-    max-height: 70px;
-    overflow-y: scroll;
-    border: 1px solid black;
+    width: 90%;
+    max-height: 150px;
+    overflow-y: hidden;
     padding: 4px;
 }
 
