@@ -2,30 +2,7 @@
 
 // actions
 add_action('admin_menu', 'ceo_add_menu_pages');
-add_action('admin_enqueue_scripts', 'ceo_comic_editor_scripts', 10, 1 );
-
-function ceo_comic_editor_scripts( $hook ) {
-	global $pagenow, $post;
-	if (!empty($pagenow)) {
-/*
-		if ( $pagenow == 'post-new.php' || $pagenow == 'post.php' ) {
-			if ('comic' === $post->post_type) {
-
-				wp_enqueue_script('ceo-upload-flash', ceo_pluginfo('plugin_url').'js/upload-flash.js');
-				wp_enqueue_media();
-			}
-		}
-		if ($pagenow == 'edit.php') {
-			if ('comic' == $post->post_type) {
-				add_action('admin_footer', 'ceo_change_chapter_to_radio');
-			}
-		}
-		if ($pagenow == 'edit-tags.php') {
-			wp_enqueue_script('ceo-inline-edit', ceo_pluginfo('plugin_url').'js/custom_inline_edit_tax.dev.js');
-		}
-*/
-	}
-}
+add_action('admin_enqueue_scripts', 10, 1 );
 
 function ceo_change_chapter_to_radio(){
 	echo '<script type="text/javascript">';
