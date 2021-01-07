@@ -36,7 +36,6 @@ if ( isset($_POST['_wpnonce']) && wp_verify_nonce($_POST['_wpnonce'], 'update-op
 			}
 
 			foreach (array(
-				'add_dashboard_frumph_feed_widget',
 				'disable_comic_on_home_page',
 				'disable_comic_blog_on_home_page',
 				'enable_comments_on_homepage',
